@@ -1,0 +1,123 @@
+package com.ssafy.ws.step2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 도서리스트를 배열로 유지하며 관리하는 클래스
+ */
+public class MovieManagerImpl implements IMovieManager {
+	//코드를 작성해주세요. 
+	private List<Movie> movieList = new ArrayList<>();
+	private final int MAX_SIZE = 100;
+	
+	private static MovieManagerImpl instance = new MovieManagerImpl();
+	
+	private MovieManagerImpl() {};
+	
+	public static MovieManagerImpl getInstance() {
+		return instance;
+	}
+	public void add(Movie movie) {		
+		if (movieList.size() < MAX_SIZE) {
+			movieList.add(movie);	
+		} else {
+			System.out.println("추가 등록 불가");
+		}		
+	}
+	
+	public Movie[] getList() {
+		Movie[] res= new Movie[movieList.size()];
+		
+		return this.movieList.toArray(res);
+	}
+	
+	// 일반 영화만 반환
+	public Movie[] getMovies() {
+		
+		int cnt = 0;
+		
+		for(int i=0; i<this.size; i++) {
+			// 리스트안의 객체가 SeriesMovie 클래스의 인스턴스인지 검사
+			if(!(movieList[i] instanceof SeriesMovie)) {
+				cnt++;
+			}
+		}
+		
+		if (cnt == 0)
+			return null;
+		
+		Movie[] res = new Movie[cnt];
+		
+		for(int i=0, index = 0; i<this.size; i++) {
+			// 리스트안의 객체가 SeriesMovie 클래스의 인스턴스인지 검사
+			if(!(movieList[i] instanceof SeriesMovie)) {
+				res[index++] = movieList[i];
+			}
+		}
+		
+		return res;			
+	}
+	
+	// 시리즈 영화만 반환
+	public SeriesMovie[] getSeriesMovies() {
+		
+		int cnt = 0;
+		
+		for(int i=0; i<this.size; i++) {
+			// 리스트안의 객체가 SeriesMovie 클래스의 인스턴스인지 검사
+			if(movieList[i] instanceof SeriesMovie) {
+				cnt++;
+			}
+		}
+		
+		if (cnt == 0)
+			return null;
+		
+		SeriesMovie[] res = new SeriesMovie[cnt];
+		
+		for(int i=0, index = 0; i<this.size; i++) {
+			// 리스트안의 객체가 SeriesMovie 클래스의 인스턴스인지 검사
+			if(movieList[i] instanceof SeriesMovie) {
+				res[index++] = (SeriesMovie) movieList[i];
+			}
+		}
+		
+		return res;			
+	}
+
+	public Movie[] searchByTitle(String title){
+		int cnt = 0;
+		
+		for (int i=0; i< this.size; i++) {
+			if (movieList[i].getTitle().contains(title)) {			
+				cnt++;
+			} 
+		}
+		
+		if (cnt == 0)
+			return null;
+		
+		Movie[] res = new Movie[cnt];
+		
+		for (int i=0, index = 0; i< this.size; i++) {
+			if (movieList[i].getTitle().contains(title)) {			
+				res[index++] = movieList[i];
+			} 
+		}
+		
+		return res;		
+	}
+	
+	// 평균상영 시간 반환
+		public double getRunningTimeAvg() {
+			
+			int sum = 0;
+			
+			for(int i=0; i<this.size; i++) {
+				sum += movieList[i].getRunningTime();
+			}
+			
+			return sum/this.size;			
+		}
+}

@@ -1,0 +1,35 @@
+package com.ssafy.ws.step2;
+
+public class MovieTest {
+	public static void main(String[] args) {
+		SeriesMovie m1 = new SeriesMovie(1, "존 윅", "채드 스타헬스키", "액션", 101, 1, "존 윅1");
+		Movie m2 = new Movie(2, "위키드", "존 추", "뮤지컬", 160);
+		SeriesMovie m3 = new SeriesMovie(3, "존 윅: 리로드", "채드 스타헬스키", "액션", 122, 2, "존 윅: 리로드");
+
+		// 싱글톤 테스트를 위해 UserManager 2개 생성
+		MovieManagerImpl movieManager = MovieManagerImpl.getInstance();
+		MovieManagerImpl movieManager2 = MovieManagerImpl.getInstance();
+		
+		movieManager.add(m1);
+		movieManager.add(m2);
+		movieManager.add(m3);
+		
+		// "존" 이라는 단어를 이름에 포함하는 검색 결과 toString 으로 출력
+		System.out.println("'존'을 포함하는 검색 결과입니다.");
+		for (Movie m : movieManager.searchByTitle("존")) {
+			System.out.println(m.toString());
+		}
+		
+		// 일반 영화 리스트만 가져와서 toString 으로 출력
+		System.out.println("일반 영화 리스트입니다.");
+		for (Movie nomal : movieManager.getMovies()) {
+			System.out.println(nomal.toString());
+		}		
+
+		// 평균상영시간 출력
+		System.out.println("평균 러닝 타임: "+movieManager.getRunningTimeAvg()+"분");
+	
+		// movieManager 2개가 같은 인스턴스를 참조하는지 검사
+		System.out.println(movieManager == movieManager2);
+	}
+}

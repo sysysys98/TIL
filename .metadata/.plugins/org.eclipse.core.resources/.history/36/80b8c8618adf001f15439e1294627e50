@@ -1,0 +1,16 @@
+package com.ssafy.ws.step2;
+
+public class SeriesMovie extends Movie {
+	int seriesnNum;
+	String episode;
+	
+	public SeriesMovie() {};
+	
+	public SeriesMovie(int seriesnNum, String episode) {
+		super();
+		this.seriesnNum = seriesnNum;
+		this.episode = episode;
+	} 
+	
+	
+}

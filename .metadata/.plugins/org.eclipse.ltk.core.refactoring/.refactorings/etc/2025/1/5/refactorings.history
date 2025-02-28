@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Frequency.java&apos; to &apos;HourglassTriangle.java&apos;&#x0D;&#x0A;- Original project: &apos;etc&apos;&#x0D;&#x0A;- Original element: &apos;Frequency.java&apos;&#x0D;&#x0A;- Renamed element: &apos;HourglassTriangle.java&apos;" description="Rename compilation unit &apos;Frequency.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{Frequency.java" name="HourglassTriangle.java" references="false" stamp="1738296497601" version="1.0"/>
+</session>
