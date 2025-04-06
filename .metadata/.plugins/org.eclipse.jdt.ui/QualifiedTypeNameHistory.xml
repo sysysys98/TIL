@@ -5,4 +5,18 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.ssafy.hw.step2.NameNotFoundException"/>
     <fullyQualifiedTypeName name="com.ssafy.ws.step2.TitleNotFoundException"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
+    <fullyQualifiedTypeName name="javax.management.StringValueExp"/>
+    <fullyQualifiedTypeName name="com.ssafy.ws.step2.dao.MovieDao"/>
+    <fullyQualifiedTypeName name="com.ssafy.ws.step2.util.DBUtil"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.PreparableStatement"/>
+    <fullyQualifiedTypeName name="com.ssafy.ws.step2.dao.MovieDaoImpl"/>
 </qualifiedTypeNameHistroy>
